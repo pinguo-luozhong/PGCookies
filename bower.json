@@ -1,0 +1,21 @@
+{
+  "name": "PGCookies",
+  "version": "1.0.0",
+  "homepage": "https://github.com/pinguo-luozhong/PGCookies.git",
+  "description": "PGCookies",
+  "main": "dist/PGCookies.min.js",
+  "keywords": [
+    "PGCookies"
+  ],
+  "authors": [
+    "luozhong@camera360.com"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
