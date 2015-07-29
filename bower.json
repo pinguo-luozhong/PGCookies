@@ -1,6 +1,6 @@
 {
   "name": "PGCookies",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/pinguo-luozhong/PGCookies.git",
   "description": "PGCookies",
   "main": "dist/PGCookies.min.js",

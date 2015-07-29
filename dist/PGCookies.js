@@ -43,9 +43,5 @@
     document.cookie = name + "=;expires=" + (new Date(0)).toGMTString();
   }
 
-  if (module) {
-    module.exports = cookies;
-  } else {
-    window.myCookies = cookies;
-  }
+  window.myCookies = cookies;
 })()
