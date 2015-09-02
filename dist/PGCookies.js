@@ -7,13 +7,16 @@
 
   //设置coolie 的值
   cookies.setCookie = function (name, value,time) {
+    if(time==""||time == undefined){
+      time = '7d'
+    }
     if(value.constructor == Object){
       value = JSON.stringify(value);
     }
     var strsec = getsec(time);
     var exp = new Date();
     exp.setTime(exp.getTime() + strsec * 1);
-    document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+    document.cookie = name + "=" + encodeURIComponent(value) + ";expires=" + exp.toGMTString()+";path=/";
   }
 
   function getsec(str) {
@@ -33,14 +36,15 @@
   cookies.getCookie = function (name) {
     var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
     if (arr = document.cookie.match(reg))
-      return unescape(arr[2]);
+      return decodeURIComponent(arr[2]);
     else
       return null;
   }
 
   //删除cookie
   cookies.delCookie = function (name) {
-    document.cookie = name + "=;expires=" + (new Date(0)).toGMTString();
+    document.cookie = name + "=;expires=" + (new Date(0)).toGMTString()+";path=/";
+    //cookies.setCookie(name,"","1s")
   }
 
   window.myCookies = cookies;
